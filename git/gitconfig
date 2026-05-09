@@ -1,0 +1,21 @@
+[init]
+	defaultBranch = main
+[user]
+	name = Brogan Clements
+	email = brogancle@gmail.com
+[core]
+	editor = nvim
+	autocrlf = input
+        pager = delta
+[fetch]
+	prune = true
+
+[interactive]
+        diffFilter = delta --color-only
+
+[delta]
+        navigate = true  # use n and N to move between diff sections
+        dark = true      # or light = true, or omit for auto-detection
+
+[merge]
+        conflictStyle = zdiff3

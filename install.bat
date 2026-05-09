@@ -15,6 +15,7 @@ winget install --id sharkdp.fd              -e --silent
 winget install --id junegunn.fzf            -e --silent
 winget install --id JesseDuffield.lazygit   -e --silent
 winget install --id BurntSushi.ripgrep.MSVC -e --silent
+winget install --id dandavison.delta        -e --silent
 rem NOTE: verify this ID with `winget search "FiraCode Nerd Font"` — may not be accurate
 winget install --id DEVCOM.FiraCodeNerdFont  -e --silent
 

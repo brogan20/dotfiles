@@ -14,7 +14,7 @@ if [[ "$OS" == "Linux" ]]; then
     sudo pacman -Syu --needed \
         fish neovim starship ghostty lazygit \
         fastfetch eza bat wget zoxide \
-        fd fzf ripgrep ttf-firacode-nerd
+        fd fzf ripgrep git-delta ttf-firacode-nerd
     if [[ "$personal" == "y" ]]; then
         sudo pacman -S --needed yt-dlp
     fi
@@ -24,7 +24,7 @@ elif [[ "$OS" == "Darwin" ]]; then
         echo "Homebrew is required. Install it from https://brew.sh, then re-run this script." >&2
         exit 1
     fi
-    brew install fish neovim starship fastfetch eza bat wget zoxide lazygit fd fzf ripgrep
+    brew install fish neovim starship fastfetch eza bat wget zoxide lazygit fd fzf ripgrep git-delta
     brew install --cask ghostty font-fira-code-nerd-font
     if [[ "$personal" == "y" ]]; then
         brew install yt-dlp

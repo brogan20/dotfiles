@@ -1,1 +1,5 @@
 fish/fish_variables
+
+# Only the ssh config is tracked — never keys or known_hosts
+ssh/*
+!ssh/config

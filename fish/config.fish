@@ -19,6 +19,18 @@ end
 set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
 
+## SSH agent
+set -l agent_file $HOME/.ssh/agent.env
+
+if test -f $agent_file
+    eval (cat $agent_file) >/dev/null
+end
+
+if not ssh-add -l >/dev/null 2>&1
+    ssh-agent -c > $agent_file
+    eval (cat $agent_file) >/dev/null
+end
+
 ## Environment setup
 if test -f ~/.fish_profile
     source ~/.fish_profile

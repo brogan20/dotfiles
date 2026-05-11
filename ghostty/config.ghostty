@@ -14,8 +14,10 @@ cursor-style-blink = true
 
 mouse-hide-while-typing = true
 
-keybind = ctrl+shift+e=new_split:right
-keybind = ctrl+shift+o=new_split:down
+macos-titlebar-style = hidden
+
+keybind = ctrl+shift+o=new_split:right
+keybind = ctrl+shift+e=new_split:down
 keybind = ctrl+shift+h=goto_split:left
 keybind = ctrl+shift+l=goto_split:right
 keybind = ctrl+shift+k=goto_split:top                                        

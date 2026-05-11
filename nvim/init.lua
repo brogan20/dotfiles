@@ -102,6 +102,8 @@ vim.pack.add({
   'https://github.com/lewis6991/gitsigns.nvim',
 })
 
+vim.lsp.enable('rust_analyzer')
+
 require('fzf-lua').setup { fzf_colors = true }
 require('mini.completion').setup {}
 require('quicker').setup {}

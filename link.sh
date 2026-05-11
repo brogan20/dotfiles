@@ -6,6 +6,10 @@ DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 link() {
     local src="$1" dst="$2"
     mkdir -p "$(dirname "$dst")"
+    # Remove destination if it's a real directory (not a symlink); ln -sfn won't replace directories
+    if [[ -d "$dst" && ! -L "$dst" ]]; then
+        rm -rf "$dst"
+    fi
     ln -sfn "$src" "$dst"
     echo "  $dst -> $src"
 }

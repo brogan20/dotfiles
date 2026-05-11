@@ -4,7 +4,7 @@ set -euo pipefail
 OS=$(uname -s)
 
 read -rp "Install personal tools (yt-dlp)? [y/N] " personal
-personal="${personal,,}"
+personal=$(echo "$personal" | tr '[:upper:]' '[:lower:]')
 
 if [[ "$OS" == "Linux" ]]; then
     if ! command -v pacman &>/dev/null; then
@@ -29,6 +29,7 @@ elif [[ "$OS" == "Darwin" ]]; then
     if [[ "$personal" == "y" ]]; then
         brew install yt-dlp
     fi
+    touch "$HOME/.hushlogin"
 
 else
     echo "Unsupported OS: $OS" >&2

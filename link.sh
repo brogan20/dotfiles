@@ -15,7 +15,6 @@ link() {
 }
 
 echo "Linking configs..."
-link "$DOTFILES/fish"                   "$HOME/.config/fish"
 link "$DOTFILES/ghostty"                "$HOME/.config/ghostty"
 link "$DOTFILES/nvim"                   "$HOME/.config/nvim"
 link "$DOTFILES/starship/starship.toml" "$HOME/.config/starship.toml"
@@ -24,4 +23,5 @@ link "$DOTFILES/lazygit"                "$HOME/.config/lazygit"
 link "$DOTFILES/ripgrep/.ripgreprc"     "$HOME/.config/ripgrep/.ripgreprc"
 link "$DOTFILES/ssh/config"             "$HOME/.ssh/config"
 link "$DOTFILES/fastfetch"              "$HOME/.config/fastfetch"
+link "$DOTFILES/zsh/.zshrc"             "$HOME/.zshrc"
 echo "Done."

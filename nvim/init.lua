@@ -100,9 +100,16 @@ vim.pack.add({
   'https://github.com/stevearc/quicker.nvim',
   -- Git integration
   'https://github.com/lewis6991/gitsigns.nvim',
+  -- Syntax highlighting
+  'https://github.com/nvim-treesitter/nvim-treesitter',
 })
 
 vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('vtsls')
+
+require('nvim-treesitter').setup {
+  ensure_installed = { 'typescript', 'javascript', 'tsx', 'json', 'lua', 'bash', 'markdown', 'rust' },
+}
 
 require('fzf-lua').setup { fzf_colors = true }
 require('mini.completion').setup {}

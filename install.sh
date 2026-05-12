@@ -12,9 +12,14 @@ if [[ "$OS" == "Linux" ]]; then
         exit 1
     fi
     sudo pacman -Syu --needed \
-        fish neovim starship ghostty lazygit \
+        zsh zsh-autosuggestions zsh-syntax-highlighting \
+        neovim starship ghostty lazygit \
         fastfetch eza bat wget zoxide \
-        fd fzf ripgrep git-delta ttf-firacode-nerd
+        fd fzf ripgrep git-delta ttf-firacode-nerd \
+        rust-analyzer fnm
+    eval "$(fnm env)"
+    fnm install --lts
+    npm install -g @vtsls/language-server
     if [[ "$personal" == "y" ]]; then
         sudo pacman -S --needed yt-dlp
     fi
@@ -24,8 +29,13 @@ elif [[ "$OS" == "Darwin" ]]; then
         echo "Homebrew is required. Install it from https://brew.sh, then re-run this script." >&2
         exit 1
     fi
-    brew install fish neovim starship fastfetch eza bat wget zoxide lazygit fd fzf ripgrep git-delta
+    brew install neovim starship fastfetch eza bat wget zoxide lazygit fd fzf ripgrep git-delta \
+        zsh-autosuggestions zsh-syntax-highlighting \
+        rust-analyzer fnm
     brew install --cask ghostty font-fira-code-nerd-font
+    eval "$(fnm env)"
+    fnm install --lts
+    npm install -g @vtsls/language-server
     if [[ "$personal" == "y" ]]; then
         brew install yt-dlp
     fi
@@ -36,11 +46,11 @@ else
     exit 1
 fi
 
-# Set fish as default shell
-FISH_PATH=$(command -v fish)
-if ! grep -qF "$FISH_PATH" /etc/shells; then
-    echo "$FISH_PATH" | sudo tee -a /etc/shells
+# Set zsh as default shell
+ZSH_PATH=$(command -v zsh)
+if ! grep -qF "$ZSH_PATH" /etc/shells; then
+    echo "$ZSH_PATH" | sudo tee -a /etc/shells
 fi
-chsh -s "$FISH_PATH"
+chsh -s "$ZSH_PATH"
 
 echo "Done. Run link.sh to symlink configs."

@@ -175,6 +175,10 @@ if command -q yt-dlp
     alias dlp='yt-dlp -f "bv*+ba/b" --merge-output-format mp4 -o "[%(upload_date)s] - %(title)s.%(ext)s"'
 end
 
+if command -q fnm
+    fnm env --use-on-cd --shell fish | source
+end
+
 if command -q starship
     starship init fish | source
 end

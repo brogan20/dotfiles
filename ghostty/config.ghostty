@@ -1,3 +1,5 @@
+command = /bin/zsh
+
 font-family = FiraCode Nerd Font
 font-size = 13
 
